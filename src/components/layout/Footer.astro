@@ -1,0 +1,30 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="border-t border-white/5 py-12">
+  <div class="section-container">
+    <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+      <!-- Copyright -->
+      <p class="text-text-secondary text-sm">
+        &copy; {year} Pascal Heilig. All rights reserved.
+      </p>
+
+      <!-- Links -->
+      <div class="flex items-center gap-6">
+        <a
+          href="/impressum"
+          class="text-text-secondary hover:text-text-primary text-sm transition-colors duration-300"
+        >
+          Impressum
+        </a>
+        <a
+          href="/datenschutz"
+          class="text-text-secondary hover:text-text-primary text-sm transition-colors duration-300"
+        >
+          Datenschutz
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>

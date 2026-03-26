@@ -1,0 +1,52 @@
+---
+import AnimatedCounter from '../ui/AnimatedCounter.tsx';
+
+const skills = [
+  'ComfyUI', 'FLUX', 'Kling 3.0', 'Midjourney', 'Stable Diffusion',
+  'Cinema 4D', 'ZBrush', 'After Effects', 'DaVinci Resolve',
+  'Unreal Engine', 'TouchDesigner', 'Adobe Photoshop',
+  'Topaz Video AI', 'LLM Pipeline Integration', 'Fluxgym',
+];
+---
+
+<section id="about" class="section-padding relative overflow-hidden">
+  <!-- Background orb -->
+  <div class="gradient-orb gradient-orb-teal w-[500px] h-[500px] -right-60 top-20 absolute"></div>
+
+  <div class="section-container relative z-10">
+    <span class="section-label" data-animate>About</span>
+    <h2 class="section-title" data-animate>Pascal Heilig</h2>
+
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+      <!-- Text -->
+      <div data-animate>
+        <p class="text-text-secondary text-lg leading-relaxed mb-8">
+          Senior VFX Artist & AI Creative Technologist based in Munich. Over 15 years of professional experience in visual effects, 3D animation, motion design, and AI-powered content production. My work bridges traditional VFX craftsmanship with cutting-edge AI pipelines — for brands like Dior, BMW, and Adobe.
+        </p>
+
+        <!-- Stats -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-10">
+          <AnimatedCounter client:visible target={15} label="Years VFX" />
+          <AnimatedCounter client:visible target={25} label="Years 3D" />
+          <AnimatedCounter client:visible target={130} label="Brand Collabs" />
+          <AnimatedCounter client:visible target={12} label="Years Studio" />
+        </div>
+      </div>
+
+      <!-- Skills -->
+      <div data-animate data-animate-delay="0.2">
+        <h3 class="text-text-primary font-heading font-semibold text-xl mb-6">Tools & Skills</h3>
+        <div class="flex flex-wrap gap-2">
+          {skills.map((skill) => (
+            <span
+              class="px-3 py-1.5 bg-bg-card border border-white/5 rounded-lg text-text-secondary text-sm
+                     hover:border-accent-gold/30 hover:text-accent-gold transition-all duration-300"
+            >
+              {skill}
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

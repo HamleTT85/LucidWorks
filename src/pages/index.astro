@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/layout/Header.astro';
+import Footer from '../components/layout/Footer.astro';
+import CookieBanner from '../components/layout/CookieBanner.tsx';
+import Hero from '../components/sections/Hero.astro';
+import Showreel from '../components/sections/Showreel.astro';
+import PortfolioGrid from '../components/sections/PortfolioGrid.tsx';
+import AboutMe from '../components/sections/AboutMe.astro';
+import ClientLogos from '../components/sections/ClientLogos.astro';
+import Contact from '../components/sections/Contact.astro';
+---
+
+<BaseLayout>
+  <Header />
+
+  <main>
+    <Hero />
+    <Showreel />
+    <PortfolioGrid client:load />
+    <AboutMe />
+    <ClientLogos />
+    <Contact />
+  </main>
+
+  <Footer />
+  <CookieBanner client:load />
+</BaseLayout>

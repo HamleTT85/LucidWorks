@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-primary: #0a0a1a;
+    --bg-secondary: #12122a;
+    --bg-card: #1a1a2e;
+    --accent-gold: #c8a45c;
+    --accent-gold-light: #d4b876;
+    --accent-gold-dark: #a88a42;
+    --text-primary: #e8e4df;
+    --text-secondary: #b0aaa2;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-bg-primary text-text-primary font-body;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: rgba(200, 164, 92, 0.3);
+    color: #e8e4df;
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--bg-primary);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--accent-gold-dark);
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-gold);
+  }
+}
+
+@layer components {
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-20 md:py-32;
+  }
+
+  .section-title {
+    @apply font-heading text-section font-bold tracking-tight mb-4;
+  }
+
+  .section-label {
+    @apply text-accent-gold uppercase tracking-[0.2em] text-sm font-medium mb-6 block;
+  }
+
+  .gold-gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, #c8a45c, #d4b876, #c8a45c);
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 ease-out;
+  }
+  .card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 30px rgba(200, 164, 92, 0.05);
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-6 py-3 bg-accent-gold text-bg-primary font-heading font-semibold
+           rounded-lg transition-all duration-300 hover:bg-accent-gold-light hover:scale-[1.02] active:scale-[0.98];
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 px-6 py-3 border border-accent-gold/40 text-accent-gold font-heading font-medium
+           rounded-lg transition-all duration-300 hover:bg-accent-gold/10 hover:border-accent-gold;
+  }
+
+  /* Background gradient orbs */
+  .gradient-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: 0.15;
+    pointer-events: none;
+  }
+
+  .gradient-orb-teal {
+    background: radial-gradient(circle, #2dd4bf, transparent 70%);
+  }
+
+  .gradient-orb-purple {
+    background: radial-gradient(circle, #8b5cf6, transparent 70%);
+  }
+
+  .gradient-orb-gold {
+    background: radial-gradient(circle, #c8a45c, transparent 70%);
+  }
+}
+
+@layer utilities {
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  .animate-on-scroll.is-visible {
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}

@@ -1,0 +1,38 @@
+---
+const clients = [
+  'Dior', 'Versace', 'Bulgari', 'Hennessy', 'BMW', 'SIXT', 'SWAROVSKI',
+  'Lacoste', 'Triumph', 'ZDF', 'ProSiebenSat.1', 'RTL', 'Engelbert Strauss',
+  'Hugo Boss', 'Porsche', 'Intel', 'Rolls Royce', 'Adobe',
+];
+---
+
+<section class="py-16 relative overflow-hidden border-y border-white/5">
+  <div class="section-container mb-10">
+    <span class="section-label text-center block" data-animate>Clients</span>
+    <h2 class="text-center text-text-primary font-heading text-2xl font-semibold" data-animate>
+      Trusted by Leading Brands
+    </h2>
+  </div>
+
+  <!-- Auto-scrolling logo band -->
+  <div class="relative">
+    <!-- Fade edges -->
+    <div class="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-bg-primary to-transparent z-10 pointer-events-none"></div>
+    <div class="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-bg-primary to-transparent z-10 pointer-events-none"></div>
+
+    <div class="flex animate-logo-scroll whitespace-nowrap">
+      <!-- Duplicate for seamless loop -->
+      {[...clients, ...clients].map((client, i) => (
+        <div
+          class="inline-flex items-center justify-center min-w-[160px] px-8 py-4"
+          key={`${client}-${i}`}
+        >
+          <span class="text-text-secondary/40 font-heading font-semibold text-lg uppercase tracking-wider
+                       hover:text-text-secondary transition-colors duration-500">
+            {client}
+          </span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

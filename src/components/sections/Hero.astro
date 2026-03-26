@@ -1,0 +1,49 @@
+---
+import ScrollIndicator from '../ui/ScrollIndicator.astro';
+---
+
+<section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+  <!-- Background gradient orbs -->
+  <div class="gradient-orb gradient-orb-teal w-[600px] h-[600px] -top-40 -right-40 absolute"></div>
+  <div class="gradient-orb gradient-orb-purple w-[500px] h-[500px] bottom-20 -left-40 absolute"></div>
+  <div class="gradient-orb gradient-orb-gold w-[400px] h-[400px] top-1/3 right-1/4 absolute"></div>
+
+  <!-- Animated grid background -->
+  <div class="absolute inset-0 opacity-[0.03]" style="background-image: linear-gradient(rgba(200,164,92,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(200,164,92,0.3) 1px, transparent 1px); background-size: 60px 60px;"></div>
+
+  <!-- Content -->
+  <div class="section-container relative z-10 text-center">
+    <!-- Name -->
+    <h1
+      class="font-heading font-bold text-hero leading-[0.9] tracking-tight mb-6"
+      data-animate
+    >
+      <span class="block text-text-primary">PASCAL</span>
+      <span class="block gold-gradient-text">HEILIG</span>
+    </h1>
+
+    <!-- Subtitle -->
+    <p
+      class="text-text-secondary text-lg md:text-xl lg:text-2xl font-light tracking-wide max-w-2xl mx-auto mb-8"
+      data-animate
+      data-animate-delay="0.2"
+    >
+      Senior VFX Artist &amp; AI Creative Technologist
+    </p>
+
+    <!-- CTA Buttons -->
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4" data-animate data-animate-delay="0.4">
+      <a href="#showreel" class="btn-primary">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+        Showreel
+      </a>
+      <a href="#portfolio" class="btn-secondary">
+        Portfolio
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+      </a>
+    </div>
+  </div>
+
+  <!-- Scroll Indicator -->
+  <ScrollIndicator />
+</section>

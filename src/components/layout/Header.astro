@@ -1,0 +1,101 @@
+---
+import LanguageToggle from '../ui/LanguageToggle.tsx';
+---
+
+<header
+  id="site-header"
+  class="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
+>
+  <div class="section-container">
+    <nav class="flex items-center justify-between h-16 md:h-20">
+      <!-- Logo / Name -->
+      <a href="/" class="font-heading font-bold text-lg md:text-xl text-text-primary hover:text-accent-gold transition-colors duration-300">
+        PASCAL HEILIG
+      </a>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex items-center gap-8">
+        <a href="#showreel" class="nav-link">Showreel</a>
+        <a href="#portfolio" class="nav-link">Portfolio</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#contact" class="nav-link">Contact</a>
+        <LanguageToggle client:load />
+      </div>
+
+      <!-- Mobile Hamburger -->
+      <button
+        id="mobile-menu-btn"
+        class="md:hidden flex flex-col gap-1.5 p-2 group"
+        aria-label="Open menu"
+      >
+        <span class="block w-6 h-0.5 bg-text-primary transition-all duration-300 group-[.active]:rotate-45 group-[.active]:translate-y-2"></span>
+        <span class="block w-6 h-0.5 bg-text-primary transition-all duration-300 group-[.active]:opacity-0"></span>
+        <span class="block w-6 h-0.5 bg-text-primary transition-all duration-300 group-[.active]:-rotate-45 group-[.active]:-translate-y-2"></span>
+      </button>
+    </nav>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div
+    id="mobile-menu"
+    class="md:hidden fixed inset-0 top-16 bg-bg-primary/98 backdrop-blur-xl transform translate-x-full transition-transform duration-500 ease-out z-40"
+  >
+    <div class="flex flex-col items-center justify-center h-full gap-8">
+      <a href="#showreel" class="mobile-nav-link">Showreel</a>
+      <a href="#portfolio" class="mobile-nav-link">Portfolio</a>
+      <a href="#about" class="mobile-nav-link">About</a>
+      <a href="#contact" class="mobile-nav-link">Contact</a>
+      <div class="mt-4">
+        <LanguageToggle client:load />
+      </div>
+    </div>
+  </div>
+</header>
+
+<style>
+  .nav-link {
+    @apply text-text-secondary hover:text-text-primary transition-colors duration-300 text-sm font-medium tracking-wide uppercase;
+  }
+
+  .mobile-nav-link {
+    @apply text-text-primary font-heading text-2xl font-medium tracking-wide hover:text-accent-gold transition-colors duration-300;
+  }
+
+  /* Solid header after scroll */
+  #site-header.scrolled {
+    @apply bg-bg-primary/90 backdrop-blur-xl shadow-lg shadow-black/20;
+  }
+</style>
+
+<script>
+  // Header scroll effect
+  const header = document.getElementById('site-header');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      header?.classList.add('scrolled');
+    } else {
+      header?.classList.remove('scrolled');
+    }
+  });
+
+  // Mobile menu toggle
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+
+  btn?.addEventListener('click', () => {
+    btn.classList.toggle('active');
+    menu?.classList.toggle('translate-x-full');
+    menu?.classList.toggle('translate-x-0');
+    document.body.classList.toggle('overflow-hidden');
+  });
+
+  // Close mobile menu on link click
+  menu?.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      btn?.classList.remove('active');
+      menu?.classList.add('translate-x-full');
+      menu?.classList.remove('translate-x-0');
+      document.body.classList.remove('overflow-hidden');
+    });
+  });
+</script>

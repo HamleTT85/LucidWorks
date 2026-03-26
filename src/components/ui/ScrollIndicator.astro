@@ -1,0 +1,25 @@
+---
+---
+<div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce">
+  <span class="text-text-secondary text-xs uppercase tracking-[0.2em]" data-i18n="hero.scrollDown">Scroll down</span>
+  <svg
+    width="20"
+    height="30"
+    viewBox="0 0 20 30"
+    fill="none"
+    class="text-accent-gold"
+  >
+    <rect x="1" y="1" width="18" height="28" rx="9" stroke="currentColor" stroke-width="1.5" />
+    <circle cx="10" cy="10" r="2" fill="currentColor" class="animate-scroll-dot" />
+  </svg>
+</div>
+
+<style>
+  @keyframes scroll-dot {
+    0%, 100% { transform: translateY(0); opacity: 1; }
+    50% { transform: translateY(8px); opacity: 0.3; }
+  }
+  .animate-scroll-dot {
+    animation: scroll-dot 2s ease-in-out infinite;
+  }
+</style>

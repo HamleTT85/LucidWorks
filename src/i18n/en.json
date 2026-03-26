@@ -1,0 +1,65 @@
+{
+  "nav": {
+    "work": "Work",
+    "portfolio": "Portfolio",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "hero": {
+    "subtitle": "Senior VFX Artist & AI Creative Technologist",
+    "scrollDown": "Scroll down"
+  },
+  "showreel": {
+    "label": "Showreel",
+    "title": "AI Showreel 2026",
+    "description": "AI-powered visual effects & creative technology — a look into recent projects and workflows.",
+    "cookieNotice": "Click to load the video. Vimeo's privacy policy applies.",
+    "loadVideo": "Load Video"
+  },
+  "portfolio": {
+    "label": "Portfolio",
+    "title": "Selected Work",
+    "filterAll": "All",
+    "noResults": "No entries in this category.",
+    "viewProject": "View Project",
+    "externalLink": "External Link",
+    "close": "Close",
+    "previous": "Previous",
+    "next": "Next"
+  },
+  "about": {
+    "label": "About",
+    "title": "Pascal Heilig",
+    "description": "Senior VFX Artist & AI Creative Technologist based in Munich. Over 15 years of professional experience in visual effects, 3D animation, motion design, and AI-powered content production. My work bridges traditional VFX craftsmanship with cutting-edge AI pipelines — for brands like Dior, BMW, and Adobe.",
+    "stats": {
+      "vfxYears": "Years VFX",
+      "3dYears": "Years 3D",
+      "brandCollabs": "Brand Collabs",
+      "studioYears": "Years Studio"
+    },
+    "skillsLabel": "Tools & Skills"
+  },
+  "clients": {
+    "label": "Clients",
+    "title": "Trusted by Leading Brands"
+  },
+  "contact": {
+    "label": "Contact",
+    "title": "Let's Work Together",
+    "description": "Open for freelance projects, full-time roles, and creative collaborations.",
+    "email": "Email",
+    "location": "Location",
+    "locationValue": "Munich, Germany"
+  },
+  "footer": {
+    "imprint": "Imprint",
+    "privacy": "Privacy Policy",
+    "copyright": "© {year} Pascal Heilig. All rights reserved."
+  },
+  "cookie": {
+    "title": "Cookie Settings",
+    "text": "This website uses third-party cookies (Vimeo/YouTube) for video embeds.",
+    "accept": "Accept",
+    "decline": "Decline"
+  }
+}

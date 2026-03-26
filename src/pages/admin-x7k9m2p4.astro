@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Admin — Pascal Heilig" description="Admin Panel">
+  <div id="admin-root"></div>
+
+  <script>
+    import { createElement } from 'react';
+    import { createRoot } from 'react-dom/client';
+    import AdminLogin, { checkAdminSession } from '../components/admin/AdminLogin';
+    import AdminDashboard from '../components/admin/AdminDashboard';
+
+    const root = createRoot(document.getElementById('admin-root')!);
+
+    function render() {
+      if (checkAdminSession()) {
+        root.render(createElement(AdminDashboard));
+      } else {
+        root.render(createElement(AdminLogin, { onLogin: render }));
+      }
+    }
+
+    render();
+  </script>
+</BaseLayout>

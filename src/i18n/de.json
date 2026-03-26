@@ -1,0 +1,65 @@
+{
+  "nav": {
+    "work": "Arbeiten",
+    "portfolio": "Portfolio",
+    "about": "Über Mich",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "subtitle": "Senior VFX Artist & AI Creative Technologist",
+    "scrollDown": "Nach unten scrollen"
+  },
+  "showreel": {
+    "label": "Showreel",
+    "title": "AI Showreel 2026",
+    "description": "KI-gestützte Visual Effects & Creative Technology — ein Einblick in aktuelle Projekte und Workflows.",
+    "cookieNotice": "Klicken Sie, um das Video zu laden. Es gelten die Datenschutzrichtlinien von Vimeo.",
+    "loadVideo": "Video laden"
+  },
+  "portfolio": {
+    "label": "Portfolio",
+    "title": "Ausgewählte Arbeiten",
+    "filterAll": "Alle",
+    "noResults": "Keine Einträge in dieser Kategorie.",
+    "viewProject": "Projekt ansehen",
+    "externalLink": "Externer Link",
+    "close": "Schließen",
+    "previous": "Vorheriges",
+    "next": "Nächstes"
+  },
+  "about": {
+    "label": "Über Mich",
+    "title": "Pascal Heilig",
+    "description": "Senior VFX Artist & AI Creative Technologist mit Sitz in München. Über 15 Jahre professionelle Erfahrung in Visual Effects, 3D Animation, Motion Design und KI-gestützter Content-Produktion. Meine Arbeit verbindet traditionelles VFX-Handwerk mit modernsten KI-Pipelines — für Marken wie Dior, BMW und Adobe.",
+    "stats": {
+      "vfxYears": "Jahre VFX",
+      "3dYears": "Jahre 3D",
+      "brandCollabs": "Marken-Kooperationen",
+      "studioYears": "Jahre Studio"
+    },
+    "skillsLabel": "Tools & Skills"
+  },
+  "clients": {
+    "label": "Kunden",
+    "title": "Vertrauen führender Marken"
+  },
+  "contact": {
+    "label": "Kontakt",
+    "title": "Zusammenarbeiten",
+    "description": "Offen für Freelance-Projekte, Festanstellungen und kreative Kooperationen.",
+    "email": "E-Mail",
+    "location": "Standort",
+    "locationValue": "München, Deutschland"
+  },
+  "footer": {
+    "imprint": "Impressum",
+    "privacy": "Datenschutz",
+    "copyright": "© {year} Pascal Heilig. Alle Rechte vorbehalten."
+  },
+  "cookie": {
+    "title": "Cookie-Einstellungen",
+    "text": "Diese Website verwendet Cookies von Drittanbietern (Vimeo/YouTube) für Video-Embeds.",
+    "accept": "Akzeptieren",
+    "decline": "Ablehnen"
+  }
+}

@@ -1,0 +1,120 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+  ogImage?: string;
+}
+
+const {
+  title = 'Pascal Heilig — Senior VFX Artist & AI Creative Technologist',
+  description = 'Portfolio of Pascal Heilig. 15+ years in VFX, 3D Animation, Motion Design & AI-powered content production. Clients: Dior, BMW, Adobe, Porsche.',
+  ogImage = '/images/og-image.jpg',
+} = Astro.props;
+
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
+---
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="generator" content={Astro.generator} />
+
+  <!-- Primary Meta Tags -->
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonicalUrl} />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={canonicalUrl} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={ogImage} />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="de_DE" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImage} />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Structured Data: Person -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Pascal Heilig",
+    "url": "https://www.lucidworks.de",
+    "jobTitle": "Senior VFX Artist & AI Creative Technologist",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Munich",
+      "addressCountry": "DE"
+    },
+    "email": "pcr.heilig@gmail.com",
+    "sameAs": [
+      "https://www.linkedin.com/in/pascal-heilig-5954a733/",
+      "https://vimeo.com/user/pascalheilig"
+    ],
+    "knowsAbout": [
+      "Visual Effects", "3D Animation", "Motion Design",
+      "AI Content Production", "Projection Mapping", "ComfyUI",
+      "Cinema 4D", "After Effects", "Unreal Engine"
+    ]
+  })} />
+</head>
+<body class="antialiased">
+  <slot />
+
+  <!-- GSAP ScrollTrigger init -->
+  <script>
+    import gsap from 'gsap';
+    import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Animate all elements with data-animate attribute
+    document.addEventListener('DOMContentLoaded', () => {
+      const elements = document.querySelectorAll('[data-animate]');
+
+      elements.forEach((el, index) => {
+        const delay = el.getAttribute('data-animate-delay')
+          ? parseFloat(el.getAttribute('data-animate-delay')!)
+          : (el.closest('[data-stagger]') ? index * 0.1 : 0);
+
+        gsap.fromTo(
+          el,
+          {
+            opacity: 0,
+            y: 30,
+          },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.6,
+            delay,
+            ease: 'power2.out',
+            scrollTrigger: {
+              trigger: el,
+              start: 'top 85%',
+              once: true,
+            },
+          }
+        );
+      });
+    });
+  </script>
+</body>
+</html>
