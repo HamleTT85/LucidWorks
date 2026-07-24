@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#0a0c10">
+<title>ARACHNE — Ein Spinnenleben</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🕷️</text></svg>">
+</head>
+<body>
+<div id="game-root">
+  <canvas id="game-canvas"></canvas>
+
+  <!-- ===== HUD (Run) ===== -->
+  <div id="hud" class="hidden">
+    <div id="hud-top">
+      <div class="hud-pill" id="hud-essence" title="Seidenessenz">🕸️ <span id="essence-val">0</span></div>
+      <div class="hud-pill" id="hud-lives">🕷️ <span id="lives-val">1</span></div>
+      <div id="hud-silk-wrap" title="Seiden-Tank"><div id="hud-silk-bar"></div></div>
+      <div id="hud-activity-wrap" title="Menschen-Aktivität"><div id="hud-activity-bar"></div></div>
+      <button id="btn-retreat" class="hud-btn" title="Zurück zum Nexus">⤴ Nexus</button>
+    </div>
+    <div id="hud-perks"></div>
+    <div id="hud-warning" class="hidden"></div>
+    <div id="hud-toast" class="hidden"></div>
+    <div id="boss-bar-wrap" class="hidden"><div id="boss-name"></div><div id="boss-bar-outer"><div id="boss-bar"></div></div></div>
+    <!-- Touch controls -->
+    <div id="joy-zone"><div id="joy-base"><div id="joy-knob"></div></div></div>
+    <div id="btn-zone">
+      <button class="tbtn" id="tbtn-freeze">🧊</button>
+      <button class="tbtn" id="tbtn-act">🕸️</button>
+      <button class="tbtn big" id="tbtn-jump">⬈</button>
+    </div>
+  </div>
+
+  <!-- ===== Overlay-Screens ===== -->
+  <div id="screen-title" class="screen">
+    <div class="title-art"></div>
+    <div class="title-inner">
+      <h1>ARACHNE</h1>
+      <p class="subtitle">Ein Spinnenleben · Roguelike Survival</p>
+      <button class="btn-primary" id="btn-start">Spinnen. Jagen. Sterben. Wachsen.</button>
+      <p class="hint" id="title-hint"></p>
+    </div>
+  </div>
+
+  <div id="screen-charselect" class="screen hidden">
+    <h2>Wähle deine Spinne</h2>
+    <div id="char-cards"></div>
+    <div class="row-center"><button class="btn-ghost" id="btn-char-back">← Zurück</button></div>
+  </div>
+
+  <div id="screen-nexus" class="screen hidden">
+    <div class="nexus-bg"></div>
+    <div class="nexus-inner">
+      <div id="nexus-head">
+        <h2>DER NEXUS</h2>
+        <div class="hud-pill big-pill">🕸️ <span id="nexus-essence">0</span> Seidenessenz</div>
+      </div>
+      <div id="nexus-tabs">
+        <button class="ntab active" data-tab="skills">Blaupausen</button>
+        <button class="ntab" data-tab="teleport">Teleport</button>
+        <button class="ntab" data-tab="spider">Spinne</button>
+      </div>
+      <div id="nexus-panel-skills" class="nexus-panel">
+        <div id="skill-tree"></div>
+      </div>
+      <div id="nexus-panel-teleport" class="nexus-panel hidden">
+        <div id="teleport-list"></div>
+      </div>
+      <div id="nexus-panel-spider" class="nexus-panel hidden">
+        <div id="spider-info"></div>
+        <div class="row-center"><button class="btn-ghost" id="btn-change-char">Spinne wechseln</button></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="screen-death" class="screen hidden">
+    <div class="death-inner">
+      <h2 id="death-title">ZERQUETSCHT</h2>
+      <p id="death-cause"></p>
+      <div id="death-stats"></div>
+      <button class="btn-primary" id="btn-to-nexus">Zurück in den Nexus</button>
+    </div>
+  </div>
+
+  <div id="screen-victory" class="screen hidden">
+    <div class="death-inner">
+      <h2 id="victory-title">BOSS BEZWUNGEN</h2>
+      <p id="victory-text"></p>
+      <div id="victory-stats"></div>
+      <button class="btn-primary" id="btn-victory-nexus">Zurück in den Nexus</button>
+    </div>
+  </div>
+
+  <div id="screen-perk" class="screen-mini hidden">
+    <div class="perk-card-wrap">
+      <h3>Beute verdaut!</h3>
+      <div id="perk-card"></div>
+      <div class="row-center">
+        <button class="btn-primary" id="btn-perk-take">Nehmen</button>
+        <button class="btn-ghost" id="btn-perk-reroll">🎲 Neuwürfeln (<span id="reroll-count">0</span>)</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="loading" class="screen"><div class="loader-web"></div><p>Seide wird gesponnen …</p></div>
+</div>
+
+<script src="js/config.js"></script>
+<script src="js/save.js"></script>
+<script src="js/audio.js"></script>
+<script src="js/assets.js"></script>
+<script src="js/input.js"></script>
+<script src="js/world.js"></script>
+<script src="js/entities.js"></script>
+<script src="js/threats.js"></script>
+<script src="js/boss.js"></script>
+<script src="js/run.js"></script>
+<script src="js/nexus.js"></script>
+<script src="js/screens.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
