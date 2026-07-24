@@ -44,3 +44,11 @@ GDD.md             Vollständiges Game-Design-Dokument
 ```
 
 Das komplette ausgearbeitete Konzept steht in [GDD.md](GDD.md).
+
+## Live-Deployment (Higgsfield)
+
+- **Play-URL:** https://winter-poppy-702.higgsfield.gg/
+- `game_id` für Update-Deploys: `d7a5bfd2-65b9-4a5c-ba6f-4c2667da2d91`
+- Update-Flow: Ordnerinhalt (inkl. `logic.js`-Stub im Root) als Zip packen,
+  per Higgsfield `media_upload` hochladen und `deploy_game` **mit derselben
+  `game_id`** aufrufen — die URL bleibt erhalten.
