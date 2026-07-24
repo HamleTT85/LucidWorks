@@ -1,0 +1,21 @@
+id,kind,file,description,key_color,aspect,relative_scale
+spider_huntsman,sprite,assets/img/spider_huntsman.png,agile huntsman spider hero,#FF00FF,1:1,1.0
+spider_orbweaver,sprite,assets/img/spider_orbweaver.png,elegant garden orb-weaver spider,#FF00FF,1:1,1.0
+spider_jumper,sprite,assets/img/spider_jumper.png,cute fluffy jumping spider,#FF00FF,1:1,0.8
+spider_widow,sprite,assets/img/spider_widow.png,sleek black widow spider,#00FF00,1:1,0.9
+spider_tarantula,sprite,assets/img/spider_tarantula.png,heavy burly tarantula,#FF00FF,1:1,1.3
+prey_fly,sprite,assets/img/prey_fly.png,common housefly,#FF00FF,1:1,0.35
+prey_moth,sprite,assets/img/prey_moth.png,dusty brown moth,#FF00FF,1:1,0.5
+prey_beetle,sprite,assets/img/prey_beetle.png,small shiny darkling beetle,#FF00FF,1:1,0.4
+prey_firefly,sprite,assets/img/prey_firefly.png,magical glowing firefly,#FF00FF,1:1,0.35
+boss_rat,sprite,assets/img/boss_rat.png,huge menacing basement rat boss,#FF00FF,1:1,4.0
+boss_centipede,sprite,assets/img/boss_centipede.png,giant house centipede boss,#FF00FF,1:1,3.5
+boss_cat,sprite,assets/img/boss_cat.png,huge fluffy house cat boss,#FF00FF,1:1,6.0
+threat_hand,sprite,assets/img/threat_hand.png,giant reaching human hand,#FF00FF,1:1,3.0
+threat_slipper,sprite,assets/img/threat_slipper.png,raised felt house slipper,#FF00FF,1:1,2.5
+threat_vacuum,sprite,assets/img/threat_vacuum.png,vacuum cleaner nozzle with hose,#FF00FF,1:1,3.0
+bg_keller,background,assets/img/bg_keller.jpg,dim cluttered basement interior,-,16:9,-
+bg_bad,background,assets/img/bg_bad.jpg,tiled bathroom interior at night,-,16:9,-
+bg_wohnzimmer,background,assets/img/bg_wohnzimmer.jpg,cozy living room at dusk,-,16:9,-
+bg_nexus,background,assets/img/bg_nexus.jpg,spider nexus void with holographic panels,-,16:9,-
+title_art,background,assets/img/title_art.jpg,epic spider title artwork,-,16:9,-
